@@ -19,6 +19,8 @@ func main() {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
+	router.Use(middleware.CorsMiddleware())
+
 	routes.PublicRoutes(router)
 
 	router.Use(middleware.Authorization())
